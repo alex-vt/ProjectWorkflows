@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <execution_timeout_seconds>10</execution_timeout_seconds>
+    <execution_server_address>http://localhost:9000/WorkflowsExecutionServer</execution_server_address>
+    <database_poll_interval_milliseconds>5000</database_poll_interval_milliseconds>
+    <database_url>jdbc:h2:workflows_database</database_url>
+    <database_port>9123</database_port>
+</resources>

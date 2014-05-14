@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<task_data xmlns="http://cad.kpi.ua/en" type="task" name="2 plus 2"
+	workflow_name="2 integer numbers addition" revision="2013-08-21">
+	<data id="1" availability="local" type="int">
+		<name>Number 1</name>
+		<content>2</content>
+	</data>
+	<data id="2" availability="local" type="int">
+		<name>Number 2</name>
+		<content>2</content>
+	</data>
+	<unit id="1" type="Adder">
+		<name>Adder of integers a, b</name>
+		<port id="1" type="int" name="a" direction="in"/>
+		<port id="2" type="int" name="b" direction="in"/>
+		<port id="3" type="int" name="Sum" direction="out"/>
+	</unit>
+	<input from_data="1" to_unit="1" to_port="1" type="int" name="a"/>
+	<input from_data="2" to_unit="1" to_port="2" type="int" name="b"/>
+	<output from_unit="1" from_port="3" to_data="3" type="int" name="Sum"/>
+</task_data>

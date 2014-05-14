@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <test_task_path>test_tasks/TaskDataExampleAdder4.xml</test_task_path>
+    <database_address>jdbc:h2:tcp://localhost:9123/workflows_database</database_address>
+</resources>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<task_data xmlns="http://cad.kpi.ua/en" type="task" name="1+2+3+4"
+	workflow_name="Cascade numbers addition" revision="2013-08-21">
+	<data id="1" availability="local" type="double">
+		<name>Number 1</name>
+		<content>1</content>
+	</data>
+	<data id="2" availability="local" type="double">
+		<name>Number 2</name>
+		<content>2</content>
+	</data>
+	<data id="3" availability="local" type="double">
+		<name>Number 3</name>
+		<content>3</content>
+	</data>
+	<data id="4" availability="local" type="double">
+		<name>Number 4</name>
+		<content>4</content>
+	</data>
+	<unit id="1" type="Adder">
+		<name>Add numbers 1, 2</name>
+		<port id="1" type="double" name="a" direction="in"/>
+		<port id="2" type="double" name="b" direction="in"/>
+		<port id="3" type="double" name="Sum" direction="out"/>
+	</unit>
+	<unit id="2" type="Adder">
+		<name>Add numbers 3, 4</name>
+		<port id="1" type="double" name="a" direction="in"/>
+		<port id="2" type="double" name="b" direction="in"/>
+		<port id="3" type="double" name="Sum" direction="out"/>
+	</unit>
+	<unit id="3" type="Adder">
+		<name>Add previous sums</name>
+		<port id="1" type="double" name="a" direction="in"/>
+		<port id="2" type="double" name="b" direction="in"/>
+		<port id="3" type="double" name="Sum" direction="out"/>
+	</unit>
+	<input from_data="1" to_unit="1" to_port="1" type="double" name="a to 1"/>
+	<input from_data="2" to_unit="1" to_port="2" type="double" name="b to 1"/>
+	<input from_data="3" to_unit="2" to_port="1" type="double" name="a to 2"/>
+	<input from_data="4" to_unit="2" to_port="2" type="double" name="b to 2"/>
+	<link from_unit="1" from_port="3" to_unit="3" to_port="1" type="double" name="Sum a from 1 to 3"/>
+	<link from_unit="2" from_port="3" to_unit="3" to_port="2" type="double" name="Sum b from 2 to 3"/>
+	<output from_unit="3" from_port="3" to_data="5" type="double" name="Cascade sum of 4 doubles"/>
+</task_data>

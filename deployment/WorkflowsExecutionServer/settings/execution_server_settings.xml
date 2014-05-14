@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <programs_folder>programs</programs_folder>
+    <execution_folder>executions</execution_folder>
+    <server_address>http://localhost:9000/WorkflowsExecutionServer</server_address>
+</resources>

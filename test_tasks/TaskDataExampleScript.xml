@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<task_data xmlns="http://cad.kpi.ua/en" type="task" name="Script Execution"
+	workflow_name="Octave script execution" revision="2013-08-21">
+	<data id="1" availability="local" type="text">
+		<name>Input script</name>
+		<content>#! /usr/bin/octave -qf
+printf("This is the test script output.\n");
+arg_list = argv ();
+# output of arguments
+printf("1st argument is: %s\n", arg_list{1});
+printf("2nd argument is: %s\n", arg_list{2});
+printf("Finished.\n");
+        </content>
+	</data>
+	<data id="2" availability="local" type="text">
+		<name>Input script arguments</name>
+		<content>-arg1 -arg2</content>
+	</data>
+	<unit id="1" type="run_script">
+		<name>Run the test script</name>
+		<port id="1" type="text" name="Script" direction="in"/>
+		<port id="2" type="text" name="Arguments" direction="in"/>
+		<port id="3" type="text" name="Output" direction="out"/>
+	</unit>
+	<input from_data="1" to_unit="1" to_port="1" type="text" name="Test script body"/>
+	<input from_data="2" to_unit="1" to_port="2" type="text" name="Arguments"/>
+	<output from_unit="1" from_port="3" to_data="3" type="text" name="Output"/>
+</task_data>
